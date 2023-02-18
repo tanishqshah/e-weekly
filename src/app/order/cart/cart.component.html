@@ -1,0 +1,38 @@
+<section class="products">
+    <h1>Products In Cart</h1>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Amount</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of cart;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.pivot.amount}}</td>
+                <td class="action">
+                    <button class="qtbtn"><i class="fa-solid fa-minus" (click)="updateCart(i,'minus')"></i></button>
+                    {{item.pivot.quantity}}
+                    <button class="qtbtn"><i class="fa-solid fa-plus" (click)="updateCart(i,'plus')"></i></button>
+                </td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td colspan="3">Total Amount</td>
+                <td>{{total_amount}}</td>
+                <td>{{total_quantity}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</section>

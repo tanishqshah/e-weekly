@@ -1,0 +1,180 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"); */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  color: #14213d;
+
+  width: 100%;
+
+  border-top-right-radius: 5rem;
+  box-shadow: 0px -5px #fca311;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 960px) {
+  footer {
+    width: 100%;
+    top: 120px;
+  }
+}
+
+.manik {
+  width: 100px;
+}
+.main {
+  margin-top: 50px;
+
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-top: 3%;
+}
+span {
+  color: #fca311;
+}
+.row {
+  margin-top: 50px;
+}
+.footer-header {
+  font-size: 1.5rem;
+  /* margin-bottom: 20px; */
+}
+
+.col-md-4 {
+  padding: 1%;
+  padding-bottom: 1%;
+}
+
+.office-des {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.office a {
+  text-decoration: none;
+  color: #98a8f8;
+}
+.office a:hover {
+  color: #fca311;
+}
+.num {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.link-des {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.link-des a {
+  color: #fca311;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.link-des a:hover {
+  color: #fca311;
+  transition: linear 0.3s;
+}
+
+.btn-know {
+  text-decoration: none;
+  background-color: #fca311;
+  padding: 10px;
+  position: relative;
+  top: 30px;
+  background-color: transparent;
+  border: 1px solid #98a8f8;
+  color: #98a8f8;
+  text-transform: uppercase;
+  border-radius: 10px;
+}
+
+.btn-know:hover {
+  color: #fca311;
+  background-color: #98a8f8;
+  transition: linear 0.3s;
+}
+
+.contact-form {
+  padding: 30px 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  max-width: 400px;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form .form-input,
+.form-text-area {
+  background-color: #f0f4f5;
+  height: 50px;
+  padding-left: 16px;
+}
+
+.contact-form .form-text-area {
+  background-color: #f0f4f5;
+  height: auto;
+  padding-left: 16px;
+}
+
+.contact-form .form-control::placeholder {
+  color: #aeb4b9;
+  font-weight: 500;
+  opacity: 1;
+}
+
+.contact-form .form-control:-ms-input-placeholder {
+  color: #aeb4b9;
+  font-weight: 500;
+}
+
+.contact-form .form-control::-ms-input-placeholder {
+  color: #aeb4b9;
+  font-weight: 500;
+}
+
+.contact-form .form-control:focus {
+  border-color: #fca311;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.07), 0 0 8px #fca311;
+}
+
+.contact-form .title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.contact-form .description {
+  color: #aeb4b9;
+  font-size: 14px;
+  text-align: center;
+}
+
+.contact-form .submit-button-wrapper {
+  text-align: center;
+}
+
+.contact-form .submit-button-wrapper input {
+  border: none;
+  border-radius: 4px;
+  background-color: #fca311;
+  color: white;
+  text-transform: uppercase;
+  padding: 10px 60px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.contact-form .submit-button-wrapper input:hover {
+  background-color: #fca311;
+}

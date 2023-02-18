@@ -1,0 +1,91 @@
+<div class="bg">
+  <section class="main-section section">
+    <div class="container" [ngClass]="{ active: activeClass }">
+      <div class="user signinbox">
+        <div class="imagebox img-fluid">
+          <img src="../../assets/Mobile login-cuate.png" />
+        </div>
+        <div class="formbox">
+          <div class="form">
+            <h2>Signin</h2>
+            <form [formGroup]="loginForm" novalidate>
+              <input type="text" formControlName="loginemail" [(ngModel)]="loginemail" placeholder="email" />
+              <div *ngIf="
+                loginForm.controls['loginemail'].invalid &&
+                (loginForm.controls['loginemail'].dirty ||
+                  loginForm.controls['loginemail'].touched)
+              " class="alert alert-danger" style="text-align: center">
+                email is invalid
+              </div>
+              <input type="password" formControlName="loginpassword" [(ngModel)]="loginpassword"
+                placeholder="Password" />
+              <div *ngIf="
+                loginForm.controls['loginpassword'].invalid &&
+                (loginForm.controls['loginpassword'].dirty ||
+                  loginForm.controls['loginpassword'].touched)
+              " class="alert alert-danger" style="text-align: center">
+                Password should be minimum 8 characters
+              </div>
+              <input type="submit" [disabled]="loginForm.pristine || loginForm.invalid" (click)="login()"
+                value="Login" />
+            </form>
+            <p class="signup-text">
+              Don't have an account?
+              <a (click)="toggleForm()">Signup</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="user signupbox">
+        <div class="formbox">
+          <div class="form">
+            <h2>Signup</h2>
+            <form [formGroup]="signupForm" novalidate>
+              <input type="text" [(ngModel)]="name" formControlName="name" placeholder="Name" />
+              <div *ngIf="
+                signupForm.controls['name'].invalid &&
+                (signupForm.controls['name'].dirty ||
+                  signupForm.controls['name'].touched)
+              " class="alert alert-danger" style="text-align: center">
+                Name is invalid
+              </div>
+              <input type="email" [(ngModel)]="email" formControlName="email" placeholder="Email" />
+              <div *ngIf="
+                signupForm.controls['email'].invalid &&
+                (signupForm.controls['email'].dirty ||
+                  signupForm.controls['email'].touched)
+              " class="alert alert-danger" style="text-align: center">
+                Email is invalid
+              </div>
+              <input type="text" [(ngModel)]="contact" formControlName="contact" placeholder="Contact" />
+              <div *ngIf="
+                signupForm.controls['contact'].invalid &&
+                (signupForm.controls['contact'].dirty ||
+                  signupForm.controls['contact'].touched)
+              " class="alert alert-danger" style="text-align: center">
+                Phone number should be 10 digits
+              </div>
+              <input type="password" [(ngModel)]="password" formControlName="password" placeholder="Password" />
+              <div *ngIf="
+                signupForm.controls['password'].invalid &&
+                (signupForm.controls['password'].dirty ||
+                  signupForm.controls['password'].touched)
+              " class="alert alert-danger" style="text-align: center">
+                Password should be minimum 8 characters
+              </div>
+              <input [disabled]="signupForm.pristine || signupForm.invalid" type="submit" (click)="signup()"
+                value="Signup" />
+            </form>
+            <p class="signup-text">
+              Already have an account?
+              <a (click)="toggleForm()">Login</a>
+            </p>
+          </div>
+        </div>
+        <div class="imagebox img-fluid">
+          <img src="../../assets/Mobile login-pana.png" />
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

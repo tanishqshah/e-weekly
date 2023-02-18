@@ -1,0 +1,29 @@
+.headingColor {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+  .headingColor span {
+    color: #fca311;
+    
+  }
+
+  h1{
+    padding-bottom: 30px;
+  }
+
+
+  .Admin{
+
+    height: 100%;
+    margin: 50px;
+  }
+  .example-card{
+    border: solid;
+    border-color: #fca311;
+  }
+
+  mat-card-header{
+    display: flex;
+    justify-content: space-between;
+  }
+ 

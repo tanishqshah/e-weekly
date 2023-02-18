@@ -1,0 +1,99 @@
+<!-- <section class="products">
+
+    <div class="header">
+        <h1>Featured Products</h1>
+        <i class="fa-solid fa-cart-shopping" routerLink="/user/cart" routerLinkActive="router-link-active" ></i>
+    </div>
+    <div class="product-list">
+
+        <div class="product" *ngFor="let product of products;let i=index">
+
+            <div class="product-img">
+                <img [src]="product.image" alt="product">
+            </div>
+
+            <div class="product-details">
+                <h3>{{product.name}}</h3>
+                <h4>{{product.price}} Rs</h4>
+                <p>{{product.category.name}}</p>
+
+                
+                <button class="btn" *ngIf="checkInCart(product)===false" (click)="addToCart(product)">Add To Cart</button>
+                <button class="btn" *ngIf="checkInCart(product)===true" (click)="removeFromCart(product.id)">Remove From Cart</button>
+
+            </div>
+            
+
+        </div>
+
+
+    </div>
+
+</section> -->
+
+<div class="container justify-content-center mt-50 mb-50">
+    <div class="header">
+        <h1 data-aos="fade-right" data-aos-duration="1000">Featured Products</h1>
+        <i class="fa-solid fa-cart-shopping" (click)="navCart()" routerLinkActive="router-link-active"
+            data-aos="fade-left" data-aos-duration="1000"></i>
+    </div>
+    <div class="row">
+        <div class="col-md-12" *ngFor="let product of products;let i=index">
+
+            <div class="card card-body my-2" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div
+                    class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
+                    <div class="mr-2 mb-3 mb-lg-0">
+
+                        <img [src]="product.image" width="150" height="150" alt="">
+
+                    </div>
+
+                    <div class="media-body d-flex"
+                        style="padding-top:20px; justify-content: space-between; align-items: center; flex-direction: column;">
+                        <h6 class="media-title font-weight-semibold">
+                            <a href="#" data-abc="true" style="font-size:25px">{{product.name}}</a>
+                        </h6>
+
+                        <ul class="list-inline list-inline-dotted mb-3 mb-lg-2">
+                            <li class="list-inline-item"><a href="#" class="text-muted"
+                                    data-abc="true">{{product.category.name}}</a></li>
+                        </ul>
+
+                        <p class="mb-3"> {{product.description}} </p>
+
+                    </div>
+
+                    <div class=" d-flex px-2 py-3 mt-lg-0 ml-lg-3 text-center"
+                        style="flex-direction: column; justify-content: space-between;">
+                        <h3 class="mb-0 font-weight-semibold">Rs {{product.price}}</h3>
+
+
+                        <button type="button" class="btn btn-warning mt-4 text-white"
+                            *ngIf="checkInCart(product)===false" (click)="addToCart(product)">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            Add to cart</button>
+                        <button type="button" class="btn btn-warning mt-4 text-white"
+                            *ngIf="checkInCart(product)===true" (click)="removeFromCart(product.id)">
+                            <i class="fa-solid fa-trash"></i>
+                            Remove cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>

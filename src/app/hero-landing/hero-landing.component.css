@@ -1,0 +1,196 @@
+html {
+  scroll-behavior: smooth;
+}
+.canvas {
+  opacity: 1;
+
+  /* Configure the animation for Firefox */
+  -moz-animation-duration: 4s;
+  -moz-animation-name: spin;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: 1;
+
+  /* Configure it for Chrome and Safari */
+  -webkit-animation-duration: 4s;
+  -webkit-animation-name: spin;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+
+  animation-duration: 4s;
+  animation-name: spin;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+.img-container img {
+  cursor: pointer;
+}
+@-moz-keyframes spin {
+  0% {
+    opacity: 0.2;
+    -moz-transform: scale(0.2) rotate(0deg);
+  }
+
+  15% {
+    opacity: 1;
+
+    -moz-transform: scale(1) rotate(1090deg);
+  }
+
+  100% {
+    opacity: 1;
+
+    -moz-transform: scale(1) rotate(1090deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    opacity: 0.2;
+    -webkit-transform: scale(0.2) rotate(0deg);
+  }
+  15% {
+    opacity: 1;
+
+    -webkit-transform: scale(1) rotate(1090deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1) rotate(1090deg);
+  }
+}
+@keyframes spin {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.2) rotate(0deg);
+  }
+
+  15% {
+    opacity: 1;
+
+    transform: scale(1) rotate(1090deg);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: scale(1) rotate(1090deg);
+  }
+}
+.heroLanding {
+  /* background-color: #e5e5e5; */
+  color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow-x: hidden;
+}
+.welcomeText {
+  font-family: "Anton", sans-serif;
+  text-align: center;
+  /* color: #fcfcfc; */
+  color: #333;
+  font-weight: bold;
+  font-size: 3rem;
+  opacity: 0;
+  margin-left: 2rem;
+}
+.welcomeText span {
+  color: #14213d;
+}
+.welcomeAnimation {
+  opacity: 1;
+  -moz-animation-duration: 3s;
+  -moz-animation-name: FlyIn;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: 1;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-name: flyIn;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+}
+@-moz-keyframes flyIn {
+  0% {
+    opacity: 0;
+    top: 70%;
+  }
+
+  90% {
+    opacity: 0.5;
+    top: 0%;
+  }
+  99% {
+    opacity: 1;
+    top: 0%;
+  }
+  100% {
+    opacity: 0;
+    top: -25%;
+  }
+}
+@-webkit-keyframes flyIn {
+  0% {
+    top: 500%;
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .welcomeText {
+    top: -25%;
+    font-size: 3rem;
+  }
+}
+
+/* background words */
+
+.bg-text-container {
+  /* transform: translateX(-50%); */
+  /* left: 50%; */
+  /* background-color: #e5e5e5; */
+  position: absolute;
+  z-index: -999;
+  width: 100vw;
+  overflow-x: hidden;
+  transform: skewY(-5deg);
+}
+@keyframes text-scrolling {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+.animate-text {
+  animation: text-scrolling 20s linear infinite;
+  will-change: transform;
+  display: block;
+  position: relative;
+  white-space: nowrap;
+}
+.animate-text.left {
+  animation-direction: reverse;
+}
+.span {
+  font-size: 280px;
+  /* color: #e5e5e5; */
+  color: transparent;
+  -webkit-text-stroke: 4px #fca311;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 0.75;
+  min-width: auto;
+  font-weight: 800;
+}
+
+.bg-text-container::-webkit-scrollbar {
+  display: none;
+}
+.bg-text-container {
+  width: 100%;
+}

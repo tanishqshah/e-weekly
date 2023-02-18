@@ -1,0 +1,236 @@
+<div class="container my-5">
+  <div class="row">
+    <h1 class="my-5 headingColor text-center">
+      <span>O</span>ur <span>C</span>ategories
+    </h1>
+    <div class="col-12 col-md-7">
+      <div class="category-cards"></div>
+      <div class="containers">
+        <div class="cards1">
+          <div class="cards card-one card-sports" (click)="check('sports')">
+            <h2
+              class="card-title"
+              [ngClass]="{
+                'selected-card': selected[0],
+                'not-selected-card': !selected[0]
+              }"
+            >
+              Sports
+            </h2>
+
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              alias ut veniam?
+            </p>
+          </div>
+          <div class="cards card-one" (click)="check('business')">
+            <h2
+              class="card-title"
+              [ngClass]="{
+                'selected-card': selected[1],
+                'not-selected-card': !selected[1]
+              }"
+            >
+              Business
+            </h2>
+
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              alias ut veniam?
+            </p>
+          </div>
+          <div class="cards card-two" (click)="check('health')">
+            <h2
+              class="card-title"
+              [ngClass]="{
+                'selected-card': selected[2],
+                'not-selected-card': !selected[2]
+              }"
+            >
+              Health
+            </h2>
+
+            <p class="description">
+              If you read carefully, you'll find that this is not your typical
+              lorem ipsum.
+            </p>
+          </div>
+
+          <div class="cards card-three" (click)="check('entertainment')">
+            <h2
+              class="card-title"
+              [ngClass]="{
+                'selected-card': selected[3],
+                'not-selected-card': !selected[3]
+              }"
+            >
+              Entertainment
+            </h2>
+
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              alias ut veniam?
+            </p>
+          </div>
+
+          <div class="cards card-four" (click)="check('technology')">
+            <h2
+              class="card-title"
+              [ngClass]="{
+                'selected-card': selected[4],
+                'not-selected-card': !selected[4]
+              }"
+            >
+              Technology
+            </h2>
+
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              alias ut veniam?
+            </p>
+          </div>
+          <div class="cards card-one" (click)="check('science')">
+            <h2
+              class="card-title"
+              [ngClass]="{
+                'selected-card': selected[5],
+                'not-selected-card': !selected[5]
+              }"
+            >
+              Science
+            </h2>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              alias ut veniam?
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-5">
+      <img
+        src="../../assets/Hands holding mobile phones with news on screen.jpg"
+        alt=""
+        class="img-fluid"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="container" id="cards">
+  <div class="container-fluid row">
+    <div
+      class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12"
+      *ngFor="let blog of news; let i = index"
+    >
+      <div
+        *ngIf="i % 2 == 0"
+        data-aos="fade-right"
+        data-bs-toggle="modal"
+        data-bs-target="#GFG1"
+        (click)="checkAuth(blog)"
+      >
+        <figure>
+          <div
+            class="media"
+            [ngStyle]="{ 'background-image': 'url(' + blog.urlToImage + ')' }"
+          ></div>
+          <figcaption>
+            <svg
+              viewBox="0 0 200 200"
+              version="1.1"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <mask id="mask" x="0" y="0" width="100%" height="100%">
+                  <rect
+                    id="alpha"
+                    x="0"
+                    y="0"
+                    width="100%"
+                    height="100%"
+                  ></rect>
+                  <text class="title" dx="50%" dy="2.5em">CLICK</text>
+                  <text class="title" dx="50%" dy="3.5em">FOR</text>
+                  <text class="title" dx="50%" dy="4.5em">MORE</text>
+                </mask>
+              </defs>
+              <rect id="base" x="0" y="0" width="100%" height="100%"></rect>
+            </svg>
+            <div class="body">
+              <p>
+                {{ blog.title }}
+              </p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+      <div
+        *ngIf="i % 2 == 1"
+        data-aos="fade-left"
+        data-bs-toggle="modal"
+        data-bs-target="#GFG1"
+        (click)="checkAuth(blog)"
+      >
+        <figure>
+          <div
+            class="media"
+            [ngStyle]="{ 'background-image': 'url(' + blog.urlToImage + ')' }"
+          ></div>
+          <figcaption>
+            <svg
+              viewBox="0 0 200 200"
+              version="1.1"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <mask id="mask" x="0" y="0" width="100%" height="100%">
+                  <rect
+                    id="alpha"
+                    x="0"
+                    y="0"
+                    width="100%"
+                    height="100%"
+                  ></rect>
+                  <text class="title" dx="50%" dy="2.5em">CLICK</text>
+                  <text class="title" dx="50%" dy="3.5em">FOR</text>
+                  <text class="title" dx="50%" dy="4.5em">MORE</text>
+                </mask>
+              </defs>
+              <rect id="base" x="0" y="0" width="100%" height="100%"></rect>
+            </svg>
+            <div class="body">
+              <p>
+                {{ blog.title }}
+              </p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="modal fade" id="GFG1">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <app-blogmodal [data]="selectedblog" *ngIf="!modal"></app-blogmodal>
+
+          <app-auth-form *ngIf="modal"></app-auth-form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

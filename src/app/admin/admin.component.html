@@ -1,0 +1,55 @@
+<div class="Admin">
+  <div class="Users">
+    <h1 class="headingColor text-center mb-5">
+      <span>E</span>weekly <span>U</span>sers
+    </h1>
+    <div class="d-flex justify-content-between mb-2">
+      <div></div>
+      <input
+        type="text"
+        placeholder="Search Here"
+        [(ngModel)]="searchText"
+        class="btn mr-sm-2"
+        style="border: solid; border-color: #fca311"
+      />
+    </div>
+
+    <div class="row">
+      <div
+        class="col-md-4"
+        *ngFor="let user of users | search : searchText"
+        id="mat-card-div"
+      >
+        <mat-card class="example-card" style="padding: 10px">
+          <mat-card-header>
+            <mat-card-subtitle>USER</mat-card-subtitle>
+
+            <mat-card-title>{{ user.name | uppercase }} </mat-card-title>
+
+            <div class="div">
+              <img src="../assets/UserAvatar.svg" alt="" />
+            </div>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p>CONTACT NUMBER :- {{ user.phone }} <br /></p>
+            <P> CONTACT EMAIL:- {{ user.email | uppercase }}</P>
+
+            <mat-divider></mat-divider>
+          </mat-card-content>
+
+          <mat-card-actions>
+            <button class="btn btn-danger" (click)="delete(user.email)">
+              DELETE
+            </button>
+          </mat-card-actions>
+
+          <mat-card-footer></mat-card-footer>
+        </mat-card>
+
+        <br />
+        <br />
+      </div>
+    </div>
+  </div>
+</div>

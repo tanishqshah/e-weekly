@@ -1,0 +1,119 @@
+<section class="footer-sec">
+  <div class="main row d-flex justify-content-center">
+    <div class="logo col-md-4">
+      <div class="footer-header">
+        <h2 class="headingColor"><span>T</span>HE <span>E</span>WEEKLY</h2>
+      </div>
+      <div class="logo-des pe-5">
+        <p class="pt-md-5">
+          There are many variations of passages of Lorem Ipsum available, but
+          the majority have suffered alteration in some form, by injected
+          humour.
+        </p>
+      </div>
+    </div>
+
+    <div class="link col-md-3">
+      <div class="footer-header">
+        <h2>QUICK LINKS</h2>
+      </div>
+
+      <div class="link-des pt-md-5">
+        <a class="footer-links" (click)="NavigateHome()">HOME</a>
+        <a class="footer-links" (click)="NavigateAbout()">ABOUT</a>
+        <a class="footer-links" (click)="NavigateGallery()">GALLERY</a>
+        <a class="footer-links" (click)="ChangeFunc()" style="cursor: pointer">
+          LOCATE US
+        </a>
+        <a class="footer-links" (click)="ChangeFunc2()" style="cursor: pointer">
+          CONTACT US
+        </a>
+      </div>
+    </div>
+
+    <div class="newsletter col-md-4">
+      <div
+        class="contact-form-wrapper d-flex justify-content-center"
+        *ngIf="FooterChange"
+      >
+        <form
+          [formGroup]="contactForm"
+          action="#"
+          class="contact-form"
+          style="border: solid; border-color: #fca311; border-radius: 10px"
+        >
+          <h5 class="title">Contact Us</h5>
+          <p class="description">
+            Feel free to contact us if you need any assistance, any help or
+            another question.
+          </p>
+          <div>
+            <input
+              type="text"
+              class="form-control rounded border-white mb-3 form-input"
+              id="name"
+              placeholder="Subject"
+              formControlName="subject"
+            />
+            <div
+              *ngIf="
+                contactForm.controls['subject'].invalid &&
+                (contactForm.controls['subject'].dirty ||
+                  contactForm.controls['subject'].touched)
+              "
+              class="alert alert-danger mb-2"
+              style="text-align: center"
+            >
+              Subject is Required.
+            </div>
+          </div>
+
+          <div>
+            <textarea
+              id="message"
+              class="form-control rounded border-white mb-3 form-text-area"
+              rows="5"
+              cols="30"
+              placeholder="Message"
+              formControlName="desc"
+            ></textarea>
+            <div
+              *ngIf="
+                contactForm.controls['desc'].invalid &&
+                (contactForm.controls['desc'].dirty ||
+                  contactForm.controls['desc'].touched)
+              "
+              class="alert alert-danger mb-2"
+              style="text-align: center"
+            >
+              Message is required.
+            </div>
+          </div>
+          <div class="submit-button-wrapper">
+            <input
+              type="submit"
+              [disabled]="contactForm.pristine || contactForm.invalid"
+              (click)="contactSubmit()"
+            />
+          </div>
+        </form>
+      </div>
+
+      <div
+        class="contact-form-wrapper d-flex justify-content-center"
+        *ngIf="FooterMap"
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.652168925758!2d73.90840091489945!3d18.54461407327847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1e16b036a6f%3A0xc3dac16c5a2e3e8!2sBajaj%20Finserv%20Direct%20Limited!5e0!3m2!1sen!2sin!4v1674900335366!5m2!1sen!2sin"
+          width="400"
+          height="445"
+          style="border: 0; border-radius: 10px"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          style="border: solid; border-color: #fca311; border-radius: 10px"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
