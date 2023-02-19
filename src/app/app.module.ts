@@ -36,6 +36,8 @@ import { UpdateproductComponent } from './adminpanel/updateproduct/updateproduct
 import { AdminloginComponent } from './adminpanel/adminlogin/adminlogin.component';
 import { AdminnavbarComponent } from './adminpanel/adminnavbar/adminnavbar.component';
 import { AdminmainComponent } from './adminpanel/adminmain/adminmain.component';
+import { ReviewComponent } from './adminpanel/review/review.component';
+import { ChangeproductdetailComponent } from './adminpanel/changeproductdetail/changeproductdetail.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { AdminmainComponent } from './adminpanel/adminmain/adminmain.component';
     UpdateproductComponent,
     AdminloginComponent,
     AdminnavbarComponent,
-    AdminmainComponent
+    AdminmainComponent,
+    ReviewComponent,
+    ChangeproductdetailComponent
   ],
   imports: [
     BrowserModule,

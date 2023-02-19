@@ -16,6 +16,8 @@ import { AddproductComponent } from './adminpanel/addproduct/addproduct.componen
 import { UserdetailComponent } from './adminpanel/userdetail/userdetail.component';
 import { AdminmainComponent } from './adminpanel/adminmain/adminmain.component';
 import { UpdateproductComponent } from './adminpanel/updateproduct/updateproduct.component';
+import { ReviewComponent } from './adminpanel/review/review.component';
+import { ChangeproductdetailComponent } from './adminpanel/changeproductdetail/changeproductdetail.component';
 
 const routes: Routes = [
   {path:'', redirectTo: '/entry', pathMatch: 'full'},
@@ -37,7 +39,9 @@ const routes: Routes = [
           {path:'userdet',component:UserdetailComponent},
           { path: 'adminnav', component: AdminnavbarComponent },
           { path: 'addproduct', component: AddproductComponent },
-          {path:'update',component:UpdateproductComponent}
+          { path: 'update', component: UpdateproductComponent },
+          { path: 'review', component: ReviewComponent },
+          {path:'change/:id',component:ChangeproductdetailComponent}
         ]
   },
       

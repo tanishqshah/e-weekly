@@ -34,6 +34,10 @@ export class AdminnavbarComponent {
     this.navLinkEvent.emit('news');
     this.router.navigate(['admin/update']);
   }
+  navRev() {
+    this.navLinkEvent.emit('news');
+    this.router.navigate(['admin/review']);
+  }
   navLog() {
     // this.navLinkEvent.emit('news');
     this.router.navigate(['admin/adminlogin']);
