@@ -10,6 +10,12 @@ import { MainComponent } from './main/main.component';
 import { AuthguardGuard } from './shared/authguard.guard';
 import { CartComponent } from './order/cart/cart.component';
 import { ProductComponent } from './order/product/product.component';
+import { AdminloginComponent } from './adminpanel/adminlogin/adminlogin.component';
+import { AdminnavbarComponent } from './adminpanel/adminnavbar/adminnavbar.component';
+import { AddproductComponent } from './adminpanel/addproduct/addproduct.component';
+import { UserdetailComponent } from './adminpanel/userdetail/userdetail.component';
+import { AdminmainComponent } from './adminpanel/adminmain/adminmain.component';
+import { UpdateproductComponent } from './adminpanel/updateproduct/updateproduct.component';
 
 const routes: Routes = [
   {path:'', redirectTo: '/entry', pathMatch: 'full'},
@@ -24,7 +30,18 @@ const routes: Routes = [
     {path: "auth", component: AuthFormComponent}
   ]
   },
-  {path: "admin", component: AdminComponent, canActivate:[AuthguardGuard]}
+  {
+    path: 'admin', component: AdminmainComponent, children: [
+      { path: 'adminlogin', component: AdminloginComponent },
+          {path:'',component:UserdetailComponent},
+          {path:'userdet',component:UserdetailComponent},
+          { path: 'adminnav', component: AdminnavbarComponent },
+          { path: 'addproduct', component: AddproductComponent },
+          {path:'update',component:UpdateproductComponent}
+        ]
+  },
+      
+// {path: "admin", component: AdminComponent, canActivate:[AuthguardGuard]}
 ];
 
 @NgModule({

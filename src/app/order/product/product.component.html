@@ -31,11 +31,13 @@
 
 </section> -->
 
-<div *ngIf="loggedin===true"  class="container justify-content-center mt-50 mb-50">
+<div class="container justify-content-center mt-50 mb-50">
     <div class="header">
         <h1 data-aos="fade-right" data-aos-duration="1000">Featured Products</h1>
-        <i class="fa-solid fa-cart-shopping" (click)="navCart()" routerLinkActive="router-link-active"
-            data-aos="fade-left" data-aos-duration="1000"></i>
+        <i *ngIf="loggedin===true" class="fa-solid fa-cart-shopping" (click)="navCart()"
+            routerLinkActive="router-link-active" data-aos="fade-left" data-aos-duration="1000"></i>
+        <i *ngIf="loggedin===false" class="fa-solid fa-cart-shopping" routerLink="/main/auth"
+            routerLinkActive="router-link-active" data-aos="fade-left" data-aos-duration="1000"></i>
     </div>
     <div class="row">
         <div class="col-md-12" *ngFor="let product of products;let i=index">
@@ -68,36 +70,26 @@
                         style="flex-direction: column; justify-content: space-between;">
                         <h3 class="mb-0 font-weight-semibold">Rs {{product.price}}</h3>
 
+                        <div *ngIf="loggedin===true">
+                            <button type="button" class="btn btn-warning mt-4 text-white"
+                                *ngIf="checkInCart(product)===false" (click)="addToCart(product)">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Add to cart</button>
+                            <button type="button" class="btn btn-warning mt-4 text-white"
+                                *ngIf="checkInCart(product)===true" (click)="removeFromCart(product.id)">
+                                <i class="fa-solid fa-trash"></i>
+                                Remove cart</button>
+                        </div>
+                        <div *ngIf="loggedin===false">
+                            <button type="button" class="btn btn-warning mt-4 text-white" routerLink="/main/auth"
+                                routerLinkActive="router-link-active">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Add to cart</button>
+                        </div>
 
-                        <button type="button" class="btn btn-warning mt-4 text-white"
-                            *ngIf="checkInCart(product)===false" (click)="addToCart(product)">
-                            <i class="fa-solid fa-cart-plus"></i>
-                            Add to cart</button>
-                        <button type="button" class="btn btn-warning mt-4 text-white"
-                            *ngIf="checkInCart(product)===true" (click)="removeFromCart(product.id)">
-                            <i class="fa-solid fa-trash"></i>
-                            Remove cart</button>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     </div>
-</div>
-
-<div *ngIf="loggedin===false">
-    hello
 </div>

@@ -1,0 +1,20 @@
+<section class="px-4 py-4">
+    <H1 style="padding-top:30px;">Welcome to Admin Panel</H1>
+    <div class="main-container">
+        <form #updateform="ngForm" (ngSubmit)="addProduct(updateform.value)" class="form-container">
+            <h2>Add Products</h2>
+            <div class="product">
+                <input type="text" name="name" placeholder="Name" ngModel /><br>
+                <input type="number" name="price" placeholder="Price" ngModel /><br>
+                <input type="text" name="des" placeholder="Description" ngModel /><br>
+                <input type="text" name="img" placeholder="image url please..." ngModel><br>
+                <select name="cid" ngModel>
+                    <option value="" selected disabled hidden>--select category--</option>
+                    <option *ngFor="let cat of category"  [value]=cat.id>{{cat.name}}</option>
+                </select><br>
+                <button type="submit" value="Add Product">Save</button>
+            </div>
+        </form>
+    </div>
+
+</section>

@@ -30,6 +30,12 @@ import { SearchPipe } from './search.pipe';
 // import { CartComponent } from './cart/cart.component';
 import { CartComponent } from './order/cart/cart.component';
 import { ProductComponent } from './order/product/product.component';
+import { UserdetailComponent } from './adminpanel/userdetail/userdetail.component';
+import { AddproductComponent } from './adminpanel/addproduct/addproduct.component';
+import { UpdateproductComponent } from './adminpanel/updateproduct/updateproduct.component';
+import { AdminloginComponent } from './adminpanel/adminlogin/adminlogin.component';
+import { AdminnavbarComponent } from './adminpanel/adminnavbar/adminnavbar.component';
+import { AdminmainComponent } from './adminpanel/adminmain/adminmain.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +55,13 @@ import { ProductComponent } from './order/product/product.component';
     MainComponent,
     SearchPipe,
     CartComponent,
-    ProductComponent
+    ProductComponent,
+    UserdetailComponent,
+    AddproductComponent,
+    UpdateproductComponent,
+    AdminloginComponent,
+    AdminnavbarComponent,
+    AdminmainComponent
   ],
   imports: [
     BrowserModule,

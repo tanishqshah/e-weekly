@@ -38,13 +38,15 @@ export class FooterComponent {
     console.log(this.contactForm.value);
     let body = {
       subject: this.contactForm.value.subject,
-      bod: this.contactForm.value.desc,
+      mssg: this.contactForm.value.desc,
     };
     alert('form submitted');
     this.http
-      .post('http://localhost:3000/users/adminMail', body)
+      .post('http://localhost:8000/api/user/review', body)
       .subscribe((res) => {
         console.log(res);
+        this.contactForm.value.subject = "";
+        this.contactForm.value.desc = "";
       });
   }
   NavigateHome() {

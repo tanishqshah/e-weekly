@@ -9,7 +9,7 @@ import { Router} from '@angular/router';
   styleUrls: ['./auth-form.component.css']
 })
 export class AuthFormComponent {
-  @Output() navRefresh = new EventEmitter<boolean>();
+  @Output() navRefresh1 = new EventEmitter<boolean>();
   name:string="";
   email:string="";
   contact:string="";
@@ -59,6 +59,15 @@ signup(){
     // alert("form submitted")
     this.activeClass = false;
   })
+  // this.http.post("http://localhost:3000/api/user/login",body,{headers}).subscribe(res=>{
+  //   console.log(res);
+  //   this.name="";
+  //   this.email="";
+  //   this.contact="";
+  //   this.password="";
+  //   // alert("form submitted")
+  //   this.activeClass = false;
+  // })
 }
 login(){
   let body = {
@@ -72,14 +81,9 @@ login(){
     if (res.success == true) {
       this.setLocalStorage(res);
       window.location.reload();
-
-
-    // alert("form submitted");
+          // alert("form submitted");
     }
-    
 
-    
-   
   })
 }
   // console.log(localStorage.setItem("user_id",res););

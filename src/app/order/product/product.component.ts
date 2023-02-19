@@ -9,8 +9,9 @@ import { ProductService } from 'src/app/product.service';
 export class ProductComponent implements OnInit{
   products: any;
   cart: any;
-  user = JSON.parse(localStorage.getItem("user") || "");
-  userid = this.user.user.id;
+  // user: any = JSON.parse(localStorage.getItem("user") || "");
+  // userid = this.user.user.id || 0;
+  userid = 0;
   // if(userid>0)
   loggedin = false;
   navLinkEvent: any;
@@ -19,10 +20,13 @@ export class ProductComponent implements OnInit{
   ngOnInit() {
     console.log("helo")
     if (localStorage.getItem('user') != null) {
+      let user = JSON.parse(localStorage.getItem("user") || "");
+      this.userid = user.user.id;
       this.loggedin = true;
     }
     else {
       this.loggedin = false;
+      this.userid = 0;
     }
     if (this.loggedin === true) {
       // console.log(this.user);
@@ -43,7 +47,7 @@ export class ProductComponent implements OnInit{
   }
   navCart() {
     this.navLinkEvent.emit('cart');
-    this.router.navigate(['main/cart']);
+    this.router.navigate(['/main/cart']);
   }
   
   checkInCart(product:any)

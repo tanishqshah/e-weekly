@@ -1,0 +1,36 @@
+
+
+.products 
+{
+    width: 100%;
+    padding: 50px;
+}
+
+
+.table
+{
+    width: 100%;
+    margin-top: 30px;
+   
+} 
+
+
+.table,td,th 
+{
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+}
+
+.table td,.table th 
+{
+    text-align: center;
+    
+    padding: 15px 0px;
+   
+}
+
+.table th 
+{
+    width: 20%;
+}
+

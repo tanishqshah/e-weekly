@@ -1,0 +1,24 @@
+<section class="products">
+    <h1>All User Details</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Contact</th>
+                <th scope="col">Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of users; let i=index;">
+                <th scope="row">{{i+1}}</th>
+                <th scope="row">{{item.name}}</th>
+                <td>{{item.email}}</td>
+                <td>{{item.contact}}</td>
+                <td>{{item.created_at}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>

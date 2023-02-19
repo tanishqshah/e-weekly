@@ -1,0 +1,38 @@
+<div class="bg">
+    <section class="main-section section">
+        <div class="container" [ngClass]="{ active: activeClass }">
+            <div class="user signinbox">
+                <div class="imagebox img-fluid">
+                    <img src="../../assets/Mobile login-cuate.png" />
+                </div>
+                <div class="formbox">
+                    <div class="form">
+                        <h2>Signin</h2>
+                        <form [formGroup]="loginForm" novalidate>
+                            <input type="text" formControlName="loginemail" [(ngModel)]="loginemail"
+                                placeholder="email" />
+                            <div *ngIf="
+            loginForm.controls['loginemail'].invalid &&
+            (loginForm.controls['loginemail'].dirty ||
+              loginForm.controls['loginemail'].touched)
+          " class="alert alert-danger" style="text-align: center">
+                                email is invalid
+                            </div>
+                            <input type="password" formControlName="loginpassword" [(ngModel)]="loginpassword"
+                                placeholder="Password" />
+                            <div *ngIf="
+            loginForm.controls['loginpassword'].invalid &&
+            (loginForm.controls['loginpassword'].dirty ||
+              loginForm.controls['loginpassword'].touched)
+          " class="alert alert-danger" style="text-align: center">
+                                Password should be minimum 8 characters
+                            </div>
+                            <input type="submit" [disabled]="loginForm.pristine || loginForm.invalid" (click)="login()"
+                                value="Login" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
