@@ -13,7 +13,8 @@ export class CartComponent implements OnInit{
   user = JSON.parse(localStorage.getItem("user") || "");
   userid= this.user.user.id;
   constructor(private productService: ProductService) { }
-  ngOnInit(): void {
+  ngOnInit() {
+    this.invokeStripe();
     this.productService.getCartProducts(this.userid).subscribe((response:any)=>{
       this.cart = response;
       console.log(response);
@@ -42,7 +43,7 @@ export class CartComponent implements OnInit{
 
     if(this.cart[index].pivot.quantity>0)
     {
-      console.log("hel;");
+      // console.log("hel;");
       this.productService.updateCart(body,this.cart[index].pivot.id).subscribe((response)=>{
         console.log(response);
       })
@@ -72,6 +73,48 @@ export class CartComponent implements OnInit{
     this.total_quantity=totalquantity
     this.total_amount = totalamount;
 
+  }
+
+
+  // payment 
+  paymentHandler: any = null;
+
+  initializePayment(amount: number) {
+    const paymentHandler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_51JgQWtSD58U2WE6xG6Juf3EsRhO3KhiVH9Bus3yhgErHOUFyvLsQC2NeyuTu66meiOgx4RoeXnl6x1Feux9mbytN00nL8FyUg6',
+      locale: 'auto',
+      token: function (stripeToken: any) {
+        console.log({stripeToken})
+        // alert('Stripe token generated!');
+      }
+    });
+  
+    paymentHandler.open({
+      name: 'EWeekly News',
+      description: 'Order Payment',
+      amount: amount,
+      // currency:"ind"
+    });
+  }
+
+  invokeStripe() {
+    if(!window.document.getElementById('stripe-script')) {
+      const script = window.document.createElement("script");
+      script.id = "stripe-script";
+      script.type = "text/javascript";
+      script.src = "https://checkout.stripe.com/checkout.js";
+      script.onload = () => {
+        this.paymentHandler = (<any>window).StripeCheckout.configure({
+          key: 'pk_test_51JgQWtSD58U2WE6xG6Juf3EsRhO3KhiVH9Bus3yhgErHOUFyvLsQC2NeyuTu66meiOgx4RoeXnl6x1Feux9mbytN00nL8FyUg6',
+          locale: 'auto',
+          token: function (stripeToken: any) {
+            console.log(stripeToken)
+            alert('Payment has been successfull!');
+          }
+        });
+      }
+      window.document.body.appendChild(script);
+    }
   }
 
 }

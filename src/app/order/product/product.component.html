@@ -31,7 +31,7 @@
 
 </section> -->
 
-<div class="container justify-content-center mt-50 mb-50">
+<div *ngIf="loggedin===true"  class="container justify-content-center mt-50 mb-50">
     <div class="header">
         <h1 data-aos="fade-right" data-aos-duration="1000">Featured Products</h1>
         <i class="fa-solid fa-cart-shopping" (click)="navCart()" routerLinkActive="router-link-active"
@@ -96,4 +96,8 @@
 
         </div>
     </div>
+</div>
+
+<div *ngIf="loggedin===false">
+    hello
 </div>

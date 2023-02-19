@@ -56,7 +56,7 @@ signup(){
     this.email="";
     this.contact="";
     this.password="";
-    alert("form submitted")
+    // alert("form submitted")
     this.activeClass = false;
   })
 }
@@ -71,10 +71,7 @@ login(){
     this.loginpassword = "";
     if (res.success == true) {
       this.setLocalStorage(res);
-      // this.router.navigate(['main/blog']);
       window.location.reload();
-      // this.router.navigate(['main/blog']);
-      // this.router.navigate(['main/blog']);
 
 
     // alert("form submitted");

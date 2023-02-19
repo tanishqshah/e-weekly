@@ -9,7 +9,7 @@ import { NewsPaperComponent } from './news-paper/news-paper.component';
 import { HeroLandingComponent } from './hero-landing/hero-landing.component';
 import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
-import { PhotoComponent } from './photo/photo.component';
+// import { PhotoComponent } from './photo/photo.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './login/login.component';
@@ -40,7 +40,6 @@ import { ProductComponent } from './order/product/product.component';
     HeroLandingComponent,
     AboutComponent,
     BlogComponent,
-    PhotoComponent,
     NavBarComponent,
     LoginComponent,
     BlogmodalComponent,

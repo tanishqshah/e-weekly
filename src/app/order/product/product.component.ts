@@ -10,18 +10,36 @@ export class ProductComponent implements OnInit{
   products: any;
   cart: any;
   user = JSON.parse(localStorage.getItem("user") || "");
-  userid= this.user.user.id || 0;
+  userid = this.user.user.id;
+  // if(userid>0)
   loggedin = false;
   navLinkEvent: any;
   router: any;
   constructor( private productService:ProductService){}
   ngOnInit() {
+    console.log("helo")
+    if (localStorage.getItem('user') != null) {
+      this.loggedin = true;
+    }
+    else {
+      this.loggedin = false;
+    }
+    if (this.loggedin === true) {
       // console.log(this.user);
       this.productService.getProducts(this.userid).subscribe((response: any) => {
         this.products = response.products;
         this.cart = response.cart;
         console.log(response);
       })
+    }
+    else {
+      this.productService.getProductswithoutuserid().subscribe((response: any) => {
+        this.products = response;
+        // this.cart = response.cart;
+        console.log(response);
+      })
+      
+    }
   }
   navCart() {
     this.navLinkEvent.emit('cart');
@@ -59,14 +77,14 @@ export class ProductComponent implements OnInit{
   }
 
   removeFromCart(productid:any)
-    {
+  {
       this.productService.removeFromCart(this.userid,productid).subscribe((response:any)=>{
         if(response.success===true)
         {
           this.cart=response.cart;
         }
       })
-    }
+  }
 
   
 }

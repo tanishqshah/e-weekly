@@ -33,6 +33,13 @@
             </tr>
         </tbody>
     </table>
+    <!-- <form>
+        <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_LI0ACwDvIEP5Fu"
+            async>PayNow</script>
+    </form> -->
 
 
+    <div style="display: flex; justify-content: flex-end;">
+        <button class="btn btn-primary " (click)="initializePayment(total_amount)">PayNow</button>
+    </div>
 </section>

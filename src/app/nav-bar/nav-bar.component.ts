@@ -43,6 +43,7 @@ export class NavBarComponent {
     this.router.navigate(['main/auth']);
   }
   navProduct() {
+    console.log("Nav clicked")
     this.navLinkEvent.emit('product');
     this.router.navigate(['main/product']);
   }
@@ -66,9 +67,11 @@ export class NavBarComponent {
     if (localStorage.getItem('user') == 'admin@admin.com') {
       this.isLoggedIn = true;
       this.admin = true;
+      this.cart = false;
     }
     if (localStorage.getItem('user') == null) {
       this.isLoggedIn = false;
+      this.cart = false;
     }
   }
 
