@@ -34,8 +34,9 @@ const routes: Routes = [
   },
   {
     path: 'admin', component: AdminmainComponent, children: [
+      { path: '', component: AdminloginComponent },
       { path: 'adminlogin', component: AdminloginComponent },
-          {path:'',component:UserdetailComponent},
+          // {path:'',component:UserdetailComponent},
           {path:'userdet',component:UserdetailComponent},
           { path: 'adminnav', component: AdminnavbarComponent },
           { path: 'addproduct', component: AddproductComponent },

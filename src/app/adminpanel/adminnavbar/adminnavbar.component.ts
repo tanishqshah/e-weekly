@@ -56,6 +56,15 @@ export class AdminnavbarComponent {
       this.isLoggedIn = false;
       this.cart = false;
     }
+
+    this.router.events.subscribe((event) => {
+      if (localStorage.getItem('admin') != null) {
+        this.isLoggedIn = true;
+        this.admin = true;
+        // this.cart = true;
+      }
+    })
+
   }
 
   toggleForm() {
@@ -66,7 +75,8 @@ export class AdminnavbarComponent {
     localStorage.removeItem('admin');
     this.isLoggedIn = false;
     this.admin = false;
+    
+    // alert('You just logged out');
     this.router.navigate(['/admin/adminlogin']);
-    alert('You just logged out');
   }
 }
